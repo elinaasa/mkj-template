@@ -2,6 +2,7 @@
 
 function generate_article($products): void
 {
+    // tulostetaan tuotteet
     if ($products->have_posts()) :
         while ($products->have_posts()) :
             $products->the_post();

@@ -18,7 +18,7 @@ function theme_setup(): void
     add_image_size('custom-header', 1200, 400, true); // Custom header size
 
 // Register the main menu
-    register_nav_menu( 'main-menu', __( 'Main Menu' ) );
+    register_nav_menu('main-menu', __('Main Menu'));
 }
 
 add_action('after_setup_theme', 'theme_setup');
@@ -30,3 +30,5 @@ function style_setup(): void
 
 add_action('wp_enqueue_scripts', 'style_setup');
 
+// custom functions
+require_once(__DIR__ . '/inc/article-function.php');

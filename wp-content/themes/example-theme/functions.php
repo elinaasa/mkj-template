@@ -16,6 +16,7 @@ function theme_setup(): void
 
     // Add custom image sizes
     add_image_size('custom-header', 1200, 400, true); // Custom header size
+    add_image_size('custom-thumbnail', 250, 250, true); // Custom thumbnail size
 
 // Register the main menu
     register_nav_menu('main-menu', __('Main Menu'));
@@ -32,3 +33,4 @@ add_action('wp_enqueue_scripts', 'style_setup');
 
 // custom functions
 require_once(__DIR__ . '/inc/article-function.php');
+require_once(__DIR__ . '/inc/random-image.php');

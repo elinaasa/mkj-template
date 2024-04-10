@@ -185,13 +185,50 @@ footer {
     border-radius: 6px;
 }
 
+.single h1 {
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+.featured-image{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+
 .single img {
     display: block;
     margin: 0 auto;
     width: 100%;
     object-fit: cover;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#like-button {
+    background-color: #f4f4f4;
+    border: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
     border-radius: 6px;
+}
+
+#like-button:hover {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+ion-icon {
+    font-size: 25px;
+}
+
+#like-count {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}
+
+#like-form{
+padding: 1rem;
+
 }
 
 .breadcrumbs {

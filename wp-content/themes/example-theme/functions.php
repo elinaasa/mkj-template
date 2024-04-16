@@ -10,14 +10,16 @@ function search_filter($query)
 
 add_filter('pre_get_posts', 'search_filter');
 
-function my_breadcrumb_title_swapper( $title,  $type, $id ) {
-    if ( in_array( 'home', $type ) ) {
-        $title = __( 'Home' );
+function my_breadcrumb_title_swapper($title, $type, $id)
+{
+    if (in_array('home', $type)) {
+        $title = __('Home');
     }
 
     return $title;
 }
-add_filter( 'bcn_breadcrumb_title', 'my_breadcrumb_title_swapper', 3, 10 );
+
+add_filter('bcn_breadcrumb_title', 'my_breadcrumb_title_swapper', 3, 10);
 
 function theme_setup(): void
 {
@@ -51,6 +53,19 @@ function style_setup(): void
 
 add_action('wp_enqueue_scripts', 'style_setup');
 
+// load js
+function script_setup(): void
+{
+    wp_enqueue_script('single-post', get_template_directory_uri() . '/js/singlePost.js', [], '1.0', true);
+    $script_data = array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    );
+    wp_localize_script('single-post', 'singlePost', $script_data);
+}
+
+add_action('wp_enqueue_scripts', 'script_setup');
+
 // custom functions
 require_once(__DIR__ . '/inc/article-function.php');
 require_once(__DIR__ . '/inc/random-image.php');
+require_once (__DIR__ . '/ajax-functions/single-post-function.php');
